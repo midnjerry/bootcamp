@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class Day2_LoopsTest {
-
+    private static final double FLOATING_POINT_ACCURACY = 0.001;
     Day2_Loops obj;
 
     @Before
@@ -52,4 +52,29 @@ public class Day2_LoopsTest {
         assertEquals("****************************", obj.drawDoubleLine(12));
     }
 
+    @Test
+    public void getSequenceToZTest() {
+        assertEquals("ABCDEFGHIJKLMNOPQRSTUVWXYZ", obj.getSequenceToZ('A'));
+        assertEquals("abcdefghijklmnopqrstuvwxyz", obj.getSequenceToZ('a'));
+        assertEquals("MNOPQRSTUVWXYZ", obj.getSequenceToZ('M'));
+        assertEquals("mnopqrstuvwxyz", obj.getSequenceToZ('m'));
+        assertEquals("STUVWXYZ", obj.getSequenceToZ('S'));
+        assertEquals("stuvwxyz", obj.getSequenceToZ('s'));
+        assertEquals("WXYZ", obj.getSequenceToZ('W'));
+        assertEquals("wxyz", obj.getSequenceToZ('w'));
+        assertEquals("Z", obj.getSequenceToZ('Z'));
+        assertEquals("z", obj.getSequenceToZ('z'));
+    }
+
+    @Test
+    public void expTest() {
+        assertEquals(1, obj.exp(0, 0), FLOATING_POINT_ACCURACY);
+        assertEquals(0, obj.exp(0, 1), FLOATING_POINT_ACCURACY);
+        assertEquals(32, obj.exp(2, 5), FLOATING_POINT_ACCURACY);
+        assertEquals(1 / 32.0, obj.exp(2, -5), FLOATING_POINT_ACCURACY);
+        assertEquals(3.235232809088698E12, obj.exp(17.8234, 10), FLOATING_POINT_ACCURACY);
+        assertEquals(3.0909677e-13, obj.exp(17.8234, -10), FLOATING_POINT_ACCURACY);
+        assertEquals(2.8984101575670307E150, obj.exp(3482034.2343, 23), FLOATING_POINT_ACCURACY);
+        assertEquals(3.450167e-151, obj.exp(3482034.2343, -23), FLOATING_POINT_ACCURACY);
+    }
 }
