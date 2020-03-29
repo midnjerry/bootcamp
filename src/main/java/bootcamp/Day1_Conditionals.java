@@ -2,10 +2,12 @@ package bootcamp;
 
 public class Day1_Conditionals {
     /**
-     * Validates input object
+     * You need to check if an object is null before you can use it.
+     * You decide to write a method that checks for this.
      *
-     * @param obj
-     * @return false if obj is null otherwise true
+     * Return true if obj is not null.
+     * Return false if obj is null.
+     *
      */
     public boolean isNotNull(Object obj) {
         // Erase this line and write code here.
@@ -13,10 +15,17 @@ public class Day1_Conditionals {
     }
 
     /**
-     * Returns hypotenuse for given triangle using
-     * Pythagorean Theorem.  c^2 = a^2 + b^2.
-     * <p>
-     * If sideA or sideB is negative, result returned should be 0.
+     * You are helping an engineer with a real-time calculator
+     * that takes measurements.  The sensors are buggy so sometimes
+     * the measurements returned are negative.
+     *
+     * He wants you to find the hypotenuse based on two measurements
+     * sideA and sideB given to you.
+     *
+     * The hypotenuse can be found by taking the square root of the
+     * following sum: sideA² + sideB²
+     *
+     * If sideA or sideB is negative, you should return 0.
      *
      * @param sideA length of sideA
      * @param sideB length of sideB
@@ -28,9 +37,10 @@ public class Day1_Conditionals {
     }
 
     /**
-     * Converts temperature from Fahrenheit to Celcius
-     * <p>
-     * Based on formula:
+     * Your chemist friend is tired of googling temperature conversions.
+     * She wants you to convert Fahrenheit to Celsius using the
+     * following formula:
+     *
      * C = (F - 32) * 5/9
      *
      * @param degreesInFahrenheit degrees in Fahrenheit
@@ -42,7 +52,7 @@ public class Day1_Conditionals {
     }
 
     /**
-     * Converts numerical grade to Letter grade
+     * Implement the method to convert a numerical grade to Letter grade
      * if grade >= 90 return A
      * if grade >= 80 and < 90 return B
      * if grade >= 70 and < 80 return C
@@ -52,15 +62,21 @@ public class Day1_Conditionals {
      * @param grade numerical grade to convert
      * @return letter grade
      */
-
     public char returnLetterGrade(double grade) {
         // Erase this line and write code here.
         throw new RuntimeException("Method Not Implemented");
     }
 
     /**
-     * Returns 2-character code that
-     * represents the card from input.
+     * Your gambling buddy can't get enough of black jack.  He
+     * wants you to program that game inside his new IOT toaster.
+     *
+     * Because of display limitations, you can only represent a
+     * card with 2 characters.
+     *
+     * Implement a method that returns a 2-character code for
+     * the suit number and card number provided.  For example,
+     * a 3 of Clubs should look like 3♣;
      *
      * @param suit number from 1 - 4
      *             1 = Spade character = \u2660
@@ -84,7 +100,11 @@ public class Day1_Conditionals {
     }
 
     /**
-     * Return single string with values separated by commas.
+     * You need to create a TPS report for your boss.  To do this
+     * you have to create a CSV file.
+     *
+     * Implement a method that returns a single string with values
+     * separated by commas.
      *
      * @param a string input
      * @param b string input
@@ -97,29 +117,35 @@ public class Day1_Conditionals {
     }
 
     /**
-     * @param dividend
-     * @param divisor
-     * @return true if dividend / divisor is evenly divisible, otherwise return false
+     * Return true if a / b is evenly divisible
+     * Otherwise return false
+     *
+     * @param a the dividend
+     * @param b the divisor
+     * @return true if a / b is evenly divisible, otherwise return false
      */
-    public boolean isDivisibleBy(long dividend, long divisor) {
+    public boolean isDivisibleBy(long a, long b) {
         // Erase this line and write code here.
         throw new RuntimeException("Method Not Implemented");
     }
 
     /**
      * You are creating a Caesar cipher to encrypt text.
-     * The character is replaced by a letter some fixed number of positions
-     * down the alphabet.  Letters that go past z roll around.
-     * <p>
-     * Algorithm should be case-sensitive!
-     * Only expect characters [A-Z, a-z] as input
+     * In this cipher, a character is replaced by a letter some
+     * fixed number of positions down the alphabet.
+     * Letters that go past z roll around and start from a again.
      *
-     * @param ch Character to encrypt
-     * @param x  The number of positions to move forward, can be negative and can be > 26
-     * @return encrypted character.
      * Example ch = 'A', x = 5 returns 'F'
      * Example ch = 'X', x = 4 returns 'B'
      * Example ch = 'x', x = 4 returns 'b'
+     *
+     * This algorithm should be case-sensitive!
+     *
+     * @param ch Character to encrypt, it is safe to assume you
+     *           will only get letters [A-Z, a-z].
+     * @param x  The number of positions to move forward,
+     *           can be negative and can be > 26
+     * @return encrypted character.
      */
     public char encryptCharacter(char ch, int x) {
         // Erase this line and write code here.
@@ -175,5 +201,4 @@ public class Day1_Conditionals {
         // Erase this line and write code here.
         throw new RuntimeException("Method Not Implemented");
     }
-
 }
