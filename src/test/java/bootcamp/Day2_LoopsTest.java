@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Day2_LoopsTest {
     private static final double FLOATING_POINT_ACCURACY = 0.001;
+    private static final double SQRT_ACCURACY = 1E-8;
     Day2_Loops obj;
 
     @Before
@@ -76,5 +77,93 @@ public class Day2_LoopsTest {
         assertEquals(3.0909677e-13, obj.exp(17.8234, -10), FLOATING_POINT_ACCURACY);
         assertEquals(2.8984101575670307E150, obj.exp(3482034.2343, 23), FLOATING_POINT_ACCURACY);
         assertEquals(3.450167e-151, obj.exp(3482034.2343, -23), FLOATING_POINT_ACCURACY);
+    }
+
+    @Test
+    public void getSequentialRangeTest() {
+        assertEquals("", obj.getSequentialRange(-1));
+        assertEquals("", obj.getSequentialRange(0));
+        assertEquals("1", obj.getSequentialRange(1));
+        assertEquals("1,2", obj.getSequentialRange(2));
+        assertEquals("1,2,3,4", obj.getSequentialRange(4));
+        assertEquals("1,2,3,4,5,6,7,8,9,10", obj.getSequentialRange(10));
+    }
+
+    @Test
+    public void factorialTest() {
+        assertEquals(1, obj.factorial(0));
+        assertEquals(1, obj.factorial(1));
+        assertEquals(2, obj.factorial(2));
+        assertEquals(6, obj.factorial(3));
+        assertEquals(24, obj.factorial(4));
+        assertEquals(120, obj.factorial(5));
+        assertEquals(720, obj.factorial(6));
+        assertEquals(5040, obj.factorial(7));
+        assertEquals(40320, obj.factorial(8));
+        assertEquals(362880, obj.factorial(9));
+        assertEquals(3628800, obj.factorial(10));
+        assertEquals(39916800, obj.factorial(11));
+        assertEquals(479001600, obj.factorial(12));
+        assertEquals(6227020800L, obj.factorial(13));
+        assertEquals(87178291200L, obj.factorial(14));
+        assertEquals(1307674368000L, obj.factorial(15));
+        assertEquals(20922789888000L, obj.factorial(16));
+        assertEquals(355687428096000L, obj.factorial(17));
+        assertEquals(6402373705728000L, obj.factorial(18));
+        assertEquals(121645100408832000L, obj.factorial(19));
+        assertEquals(2432902008176640000L, obj.factorial(20));
+    }
+
+    @Test
+    public void digitalReductionTest() {
+        for (int i = 0; i <= 9; i++) {
+            assertEquals(i, obj.digitalReduction(i));
+        }
+        assertEquals(6, obj.digitalReduction(12345));
+        assertEquals(1, obj.digitalReduction(2147483647));
+        assertEquals(9, obj.digitalReduction(9999999));
+    }
+
+    @Test
+    public void drawSquare() {
+        assertEquals("", obj.drawSquare(0));
+        assertEquals("*\n", obj.drawSquare(1));
+        assertEquals("**\n**\n", obj.drawSquare(2));
+        assertEquals("***\n* *\n***\n", obj.drawSquare(3));
+        assertEquals("****\n*  *\n*  *\n****\n", obj.drawSquare(4));
+        assertEquals("*****\n*   *\n*   *\n*   *\n*****\n", obj.drawSquare(5));
+        String sixResult = "" +
+                "******\n" +
+                "*    *\n" +
+                "*    *\n" +
+                "*    *\n" +
+                "*    *\n" +
+                "******\n";
+        assertEquals(sixResult, obj.drawSquare(6));
+
+        String tenResult = "" +
+                "**********\n" +
+                "*        *\n" +
+                "*        *\n" +
+                "*        *\n" +
+                "*        *\n" +
+                "*        *\n" +
+                "*        *\n" +
+                "*        *\n" +
+                "*        *\n" +
+                "**********\n";
+        assertEquals(tenResult, obj.drawSquare(10));
+    }
+
+    @Test
+    public void newtonSqrtTest() {
+        for (int i = 0; i <= 10000; i++) {
+            assertEquals(Math.sqrt(i), obj.newtonSqrt(i), SQRT_ACCURACY);
+            double num = (double) i + 1 / 3.0;
+            assertEquals(Math.sqrt(num), obj.newtonSqrt(num), SQRT_ACCURACY);
+            num = (double) i + 2 / 3.0;
+            assertEquals(Math.sqrt(num), obj.newtonSqrt(num), SQRT_ACCURACY);
+        }
+
     }
 }
