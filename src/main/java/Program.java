@@ -1,6 +1,4 @@
 public class Program {
-
-
     // Comments can be written using "//" to precede the comments.
 
     /* Alternative way to do comments */
