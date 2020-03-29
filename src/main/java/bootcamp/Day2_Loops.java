@@ -64,18 +64,18 @@ public class Day2_Loops {
     }
 
     /**
-     * Return a string of numbers from 1 to num
+     * Return a string of multiples of 5 beginning from 5 to num
      * separated by ","
      * <p>
-     * Example: num = 4, return "1,2,3,4"
+     * Example: num = 20, return "5,10,15,20"
      * Example: num = -1, return ""
      * Example: num = 0, return ""
-     * Example: num = 10, return "1,2,3,4,5,6,7,8,9,10"
+     * Example: num = 53, return "5,10,15,20,25,30,35,40,45,50"
      *
      * @param num
      * @return string of numbers from 1 to num separated by ","
      */
-    public String getSequentialRange(int num) {
+    public String getMultiplesOfFiveSequence(int num) {
         // Erase this line and write code here.
         throw new RuntimeException("Method Not Implemented");
     }

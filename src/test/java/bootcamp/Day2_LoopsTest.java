@@ -81,12 +81,17 @@ public class Day2_LoopsTest {
 
     @Test
     public void getSequentialRangeTest() {
-        assertEquals("", obj.getSequentialRange(-1));
-        assertEquals("", obj.getSequentialRange(0));
-        assertEquals("1", obj.getSequentialRange(1));
-        assertEquals("1,2", obj.getSequentialRange(2));
-        assertEquals("1,2,3,4", obj.getSequentialRange(4));
-        assertEquals("1,2,3,4,5,6,7,8,9,10", obj.getSequentialRange(10));
+        assertEquals("", obj.getMultiplesOfFiveSequence(-1));
+        assertEquals("", obj.getMultiplesOfFiveSequence(0));
+        assertEquals("", obj.getMultiplesOfFiveSequence(-16));
+        assertEquals("5", obj.getMultiplesOfFiveSequence(5));
+        assertEquals("5,10", obj.getMultiplesOfFiveSequence(10));
+        assertEquals("5,10,15,20,25,30,35", obj.getMultiplesOfFiveSequence(35));
+        assertEquals("5,10,15,20,25,30,35", obj.getMultiplesOfFiveSequence(36));
+        assertEquals("5,10,15,20,25,30,35", obj.getMultiplesOfFiveSequence(37));
+        assertEquals("5,10,15,20,25,30,35", obj.getMultiplesOfFiveSequence(38));
+        assertEquals("5,10,15,20,25,30,35", obj.getMultiplesOfFiveSequence(39));
+        assertEquals("5,10,15,20,25,30,35,40,45,50", obj.getMultiplesOfFiveSequence(53));
     }
 
     @Test
