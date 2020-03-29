@@ -29,6 +29,7 @@ public class Day1_ConditionalsTest {
         assertEquals(0, obj.findHypotenuse(-5, 8), FLOATING_POINT_ACCURACY);
         assertEquals(0, obj.findHypotenuse(5, -8), FLOATING_POINT_ACCURACY);
         assertEquals(11.1803, obj.findHypotenuse(5, 10), FLOATING_POINT_ACCURACY);
+        assertEquals(25, obj.findHypotenuse(20, 15), FLOATING_POINT_ACCURACY);
     }
 
     @Test
@@ -184,6 +185,9 @@ public class Day1_ConditionalsTest {
         assertEquals("Horse C", obj.horseRace(10, 4, 12, 9));
         assertEquals("Horse D", obj.horseRace(10, 4, 2, 15));
         assertEquals("Horse A", obj.horseRace(10, 4, 4, 4));
+        assertEquals("Horse B", obj.horseRace(4, 10, 4, 4));
+        assertEquals("Horse C", obj.horseRace(4, 4, 10, 4));
+        assertEquals("Horse C", obj.horseRace(4, 4, 4, 10));
         assertEquals("TIE", obj.horseRace(10, 4, 10, 4));
         assertEquals("TIE", obj.horseRace(10, 4, 5, 10));
         assertEquals("TIE", obj.horseRace(10, 10, 2, 6));
