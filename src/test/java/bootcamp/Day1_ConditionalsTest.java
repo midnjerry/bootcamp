@@ -25,7 +25,7 @@ public class Day1_ConditionalsTest {
     @Test
     public void findHypotenuseTest() {
         assertEquals(5, obj.findHypotenuse(3, 4), FLOATING_POINT_ACCURACY);
-        assertEquals(9, obj.findHypotenuse(5, 8), FLOATING_POINT_ACCURACY);
+        assertEquals(9.43398, obj.findHypotenuse(5, 8), FLOATING_POINT_ACCURACY);
         assertEquals(0, obj.findHypotenuse(-5, 8), FLOATING_POINT_ACCURACY);
         assertEquals(0, obj.findHypotenuse(5, -8), FLOATING_POINT_ACCURACY);
         assertEquals(11.1803, obj.findHypotenuse(5, 10), FLOATING_POINT_ACCURACY);
