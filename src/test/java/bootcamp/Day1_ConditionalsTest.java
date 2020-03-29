@@ -187,7 +187,7 @@ public class Day1_ConditionalsTest {
         assertEquals("Horse A", obj.horseRace(10, 4, 4, 4));
         assertEquals("Horse B", obj.horseRace(4, 10, 4, 4));
         assertEquals("Horse C", obj.horseRace(4, 4, 10, 4));
-        assertEquals("Horse C", obj.horseRace(4, 4, 4, 10));
+        assertEquals("Horse D", obj.horseRace(4, 4, 4, 10));
         assertEquals("TIE", obj.horseRace(10, 4, 10, 4));
         assertEquals("TIE", obj.horseRace(10, 4, 5, 10));
         assertEquals("TIE", obj.horseRace(10, 10, 2, 6));
