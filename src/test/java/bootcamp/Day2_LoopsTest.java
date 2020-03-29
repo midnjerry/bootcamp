@@ -33,12 +33,12 @@ public class Day2_LoopsTest {
         assertEquals("***", obj.drawLine(3));
         assertEquals("****", obj.drawLine(4));
         assertEquals("*****", obj.drawLine(5));
-        assertEquals("*******", obj.drawLine(6));
-        assertEquals("********", obj.drawLine(7));
-        assertEquals("*********", obj.drawLine(8));
-        assertEquals("**********", obj.drawLine(9));
-        assertEquals("***********", obj.drawLine(10));
-        assertEquals("****************************", obj.drawLine(24));
+        assertEquals("******", obj.drawLine(6));
+        assertEquals("*******", obj.drawLine(7));
+        assertEquals("********", obj.drawLine(8));
+        assertEquals("*********", obj.drawLine(9));
+        assertEquals("**********", obj.drawLine(10));
+        assertEquals("************************", obj.drawLine(24));
     }
 
     @Test
@@ -47,10 +47,10 @@ public class Day2_LoopsTest {
         assertEquals("", obj.drawDoubleLine(0));
         assertEquals("**", obj.drawDoubleLine(1));
         assertEquals("****", obj.drawDoubleLine(2));
-        assertEquals("*******", obj.drawDoubleLine(3));
-        assertEquals("*********", obj.drawDoubleLine(4));
-        assertEquals("***********", obj.drawDoubleLine(5));
-        assertEquals("****************************", obj.drawDoubleLine(12));
+        assertEquals("******", obj.drawDoubleLine(3));
+        assertEquals("********", obj.drawDoubleLine(4));
+        assertEquals("**********", obj.drawDoubleLine(5));
+        assertEquals("************************", obj.drawDoubleLine(12));
     }
 
     @Test
@@ -80,7 +80,7 @@ public class Day2_LoopsTest {
     }
 
     @Test
-    public void getSequentialRangeTest() {
+    public void getMultiplesOfFiveSequenceTest() {
         assertEquals("", obj.getMultiplesOfFiveSequence(-1));
         assertEquals("", obj.getMultiplesOfFiveSequence(0));
         assertEquals("", obj.getMultiplesOfFiveSequence(-16));
