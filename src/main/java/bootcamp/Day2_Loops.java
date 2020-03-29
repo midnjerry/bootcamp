@@ -1,7 +1,5 @@
 package bootcamp;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 public class Day2_Loops {
 
     /**
@@ -9,7 +7,7 @@ public class Day2_Loops {
      */
     public String getSequence(int x) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -20,7 +18,7 @@ public class Day2_Loops {
      */
     public String drawLine(int x) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -31,7 +29,7 @@ public class Day2_Loops {
      */
     public String drawDoubleLine(int x) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
 

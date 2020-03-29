@@ -1,10 +1,6 @@
 package bootcamp;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 public class Day1_Conditionals {
-
-
     /**
      * Validates input object
      *
@@ -13,22 +9,22 @@ public class Day1_Conditionals {
      */
     public boolean isNotNull(Object obj) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
      * Returns hypotenuse for given triangle using
      * Pythagorean Theorem.  c^2 = a^2 + b^2.
-     *
+     * <p>
      * If sideA or sideB is negative, result returned should be 0.
      *
      * @param sideA length of sideA
      * @param sideB length of sideB
      * @return c  (Use Math.sqrt() to get square root of number)
      */
-    public double findHypotenuse(double sideA, double sideB){
+    public double findHypotenuse(double sideA, double sideB) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -42,7 +38,7 @@ public class Day1_Conditionals {
      */
     public double convertToCelsius(double degreesInFahrenheit) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -59,7 +55,7 @@ public class Day1_Conditionals {
 
     public char returnLetterGrade(double grade) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -84,7 +80,7 @@ public class Day1_Conditionals {
      */
     public String getCard(int suit, int card) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -97,7 +93,7 @@ public class Day1_Conditionals {
      */
     public String csvMe(String a, String b, String c) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -107,19 +103,19 @@ public class Day1_Conditionals {
      */
     public boolean isDivisibleBy(long dividend, long divisor) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
      * You are creating a Caesar cipher to encrypt text.
      * The character is replaced by a letter some fixed number of positions
      * down the alphabet.  Letters that go past z roll around.
-     *
+     * <p>
      * Algorithm should be case-sensitive!
      * Only expect characters [A-Z, a-z] as input
      *
      * @param ch Character to encrypt
-     * @param x The number of positions to move forward, can be negative and can be > 26
+     * @param x  The number of positions to move forward, can be negative and can be > 26
      * @return encrypted character.
      * Example ch = 'A', x = 5 returns 'F'
      * Example ch = 'X', x = 4 returns 'B'
@@ -127,7 +123,7 @@ public class Day1_Conditionals {
      */
     public char encryptCharacter(char ch, int x) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -151,7 +147,7 @@ public class Day1_Conditionals {
      */
     public String convertToColor(int num) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
     /**
@@ -177,7 +173,7 @@ public class Day1_Conditionals {
      */
     public String horseRace(int a, int b, int c, int d) {
         // Erase this line and write code here.
-        throw new NotImplementedException();
+        throw new RuntimeException("Method Not Implemented");
     }
 
 }
