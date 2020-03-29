@@ -16,10 +16,24 @@ public class Day1_Conditionals {
         throw new NotImplementedException();
     }
 
+    /**
+     * Returns hypotenuse for given triangle using
+     * Pythagorean Theorem.  c^2 = a^2 + b^2.
+     *
+     * If sideA or sideB is negative, result returned should be 0.
+     *
+     * @param sideA length of sideA
+     * @param sideB length of sideB
+     * @return c  (Use Math.sqrt() to get square root of number)
+     */
+    public double findHypotenuse(double sideA, double sideB){
+        // Erase this line and write code here.
+        throw new NotImplementedException();
+    }
 
     /**
      * Converts temperature from Fahrenheit to Celcius
-     *
+     * <p>
      * Based on formula:
      * C = (F - 32) * 5/9
      *
@@ -43,12 +57,78 @@ public class Day1_Conditionals {
      * @return letter grade
      */
 
-    public char returnLetterGrade(double grade){
+    public char returnLetterGrade(double grade) {
         // Erase this line and write code here.
         throw new NotImplementedException();
     }
 
-    
+    /**
+     * Returns 2-character code that
+     * represents the card from input.
+     *
+     * @param suit number from 1 - 4
+     *             1 = Spade character = \u2660
+     *             2 = Heart character = \u2661
+     *             3 = Diamond character = \u2662
+     *             4 = Club character = \u2663
+     * @param card number from 1 - 13 representing Ace (1) to King (13)
+     *             Ace = A
+     *             2-9 = 2-9 respectively
+     *             10 = T
+     *             11 = J
+     *             12 = Q
+     *             13 = K
+     * @return 2-character code representing card.
+     * Example:
+     * suit = 4, card = 10 returns "T♣"
+     */
+    public String getCard(int suit, int card) {
+        // Erase this line and write code here.
+        throw new NotImplementedException();
+    }
+
+    /**
+     * Return single string with values separated by commas.
+     *
+     * @param a string input
+     * @param b string input
+     * @param c string input
+     * @return single string as a,b,c
+     */
+    public String csvMe(String a, String b, String c) {
+        // Erase this line and write code here.
+        throw new NotImplementedException();
+    }
+
+    /**
+     * @param dividend
+     * @param divisor
+     * @return true if dividend / divisor is evenly divisible, otherwise return false
+     */
+    public boolean isDivisibleBy(long dividend, long divisor) {
+        // Erase this line and write code here.
+        throw new NotImplementedException();
+    }
+
+    /**
+     * You are creating a Caesar cipher to encrypt text.
+     * The character is replaced by a letter some fixed number of positions
+     * down the alphabet.  Letters that go past z roll around.
+     *
+     * Algorithm should be case-sensitive!
+     * Only expect characters [A-Z, a-z] as input
+     *
+     * @param ch Character to encrypt
+     * @param x The number of positions to move forward, can be negative and can be > 26
+     * @return encrypted character.
+     * Example ch = 'A', x = 5 returns 'F'
+     * Example ch = 'X', x = 4 returns 'B'
+     * Example ch = 'x', x = 4 returns 'b'
+     */
+    public char encryptCharacter(char ch, int x) {
+        // Erase this line and write code here.
+        throw new NotImplementedException();
+    }
 
     /**
      * Convert the integer 'num' to a color based on the follow chart:
