@@ -61,62 +61,67 @@ public class Day1_ConditionalsTest {
 
     @Test
     public void getCardTest() {
-        assertEquals("A♠", obj.getCard(1, 1));
-        assertEquals("2♠", obj.getCard(1, 2));
-        assertEquals("3♠", obj.getCard(1, 3));
-        assertEquals("4♠", obj.getCard(1, 4));
-        assertEquals("5♠", obj.getCard(1, 5));
-        assertEquals("6♠", obj.getCard(1, 6));
-        assertEquals("7♠", obj.getCard(1, 7));
-        assertEquals("8♠", obj.getCard(1, 8));
-        assertEquals("9♠", obj.getCard(1, 9));
-        assertEquals("T♠", obj.getCard(1, 10));
-        assertEquals("J♠", obj.getCard(1, 11));
-        assertEquals("Q♠", obj.getCard(1, 12));
-        assertEquals("K♠", obj.getCard(1, 13));
+        assertEquals("A\u2660", obj.getCard(1, 1));
+        assertEquals("2\u2660", obj.getCard(1, 2));
+        assertEquals("3\u2660", obj.getCard(1, 3));
+        assertEquals("4\u2660", obj.getCard(1, 4));
+        assertEquals("5\u2660", obj.getCard(1, 5));
+        assertEquals("6\u2660", obj.getCard(1, 6));
+        assertEquals("7\u2660", obj.getCard(1, 7));
+        assertEquals("8\u2660", obj.getCard(1, 8));
+        assertEquals("9\u2660", obj.getCard(1, 9));
+        assertEquals("T\u2660", obj.getCard(1, 10));
+        assertEquals("J\u2660", obj.getCard(1, 11));
+        assertEquals("Q\u2660", obj.getCard(1, 12));
+        assertEquals("K\u2660", obj.getCard(1, 13));
 
-        assertEquals("A♡", obj.getCard(2, 1));
-        assertEquals("2♡", obj.getCard(2, 2));
-        assertEquals("3♡", obj.getCard(2, 3));
-        assertEquals("4♡", obj.getCard(2, 4));
-        assertEquals("5♡", obj.getCard(2, 5));
-        assertEquals("6♡", obj.getCard(2, 6));
-        assertEquals("7♡", obj.getCard(2, 7));
-        assertEquals("8♡", obj.getCard(2, 8));
-        assertEquals("9♡", obj.getCard(2, 9));
-        assertEquals("T♡", obj.getCard(2, 10));
-        assertEquals("J♡", obj.getCard(2, 11));
-        assertEquals("Q♡", obj.getCard(2, 12));
-        assertEquals("K♡", obj.getCard(2, 13));
+        assertEquals("A\u2661", obj.getCard(2, 1));
+        assertEquals("2\u2661", obj.getCard(2, 2));
+        assertEquals("3\u2661", obj.getCard(2, 3));
+        assertEquals("4\u2661", obj.getCard(2, 4));
+        assertEquals("5\u2661", obj.getCard(2, 5));
+        assertEquals("6\u2661", obj.getCard(2, 6));
+        assertEquals("7\u2661", obj.getCard(2, 7));
+        assertEquals("8\u2661", obj.getCard(2, 8));
+        assertEquals("9\u2661", obj.getCard(2, 9));
+        assertEquals("T\u2661", obj.getCard(2, 10));
+        assertEquals("J\u2661", obj.getCard(2, 11));
+        assertEquals("Q\u2661", obj.getCard(2, 12));
+        assertEquals("K\u2661", obj.getCard(2, 13));
 
-        assertEquals("A♢", obj.getCard(3, 1));
-        assertEquals("2♢", obj.getCard(3, 2));
-        assertEquals("3♢", obj.getCard(3, 3));
-        assertEquals("4♢", obj.getCard(3, 4));
-        assertEquals("5♢", obj.getCard(3, 5));
-        assertEquals("6♢", obj.getCard(3, 6));
-        assertEquals("7♢", obj.getCard(3, 7));
-        assertEquals("8♢", obj.getCard(3, 8));
-        assertEquals("9♢", obj.getCard(3, 9));
-        assertEquals("T♢", obj.getCard(3, 10));
-        assertEquals("J♢", obj.getCard(3, 11));
-        assertEquals("Q♢", obj.getCard(3, 12));
-        assertEquals("K♢", obj.getCard(3, 13));
+        assertEquals("A\u2662", obj.getCard(3, 1));
+        assertEquals("2\u2662", obj.getCard(3, 2));
+        assertEquals("3\u2662", obj.getCard(3, 3));
+        assertEquals("4\u2662", obj.getCard(3, 4));
+        assertEquals("5\u2662", obj.getCard(3, 5));
+        assertEquals("6\u2662", obj.getCard(3, 6));
+        assertEquals("7\u2662", obj.getCard(3, 7));
+        assertEquals("8\u2662", obj.getCard(3, 8));
+        assertEquals("9\u2662", obj.getCard(3, 9));
+        assertEquals("T\u2662", obj.getCard(3, 10));
+        assertEquals("J\u2662", obj.getCard(3, 11));
+        assertEquals("Q\u2662", obj.getCard(3, 12));
+        assertEquals("K\u2662", obj.getCard(3, 13));
 
 
-        assertEquals("A♣", obj.getCard(4, 1));
-        assertEquals("2♣", obj.getCard(4, 2));
-        assertEquals("3♣", obj.getCard(4, 3));
-        assertEquals("4♣", obj.getCard(4, 4));
-        assertEquals("5♣", obj.getCard(4, 5));
-        assertEquals("6♣", obj.getCard(4, 6));
-        assertEquals("7♣", obj.getCard(4, 7));
-        assertEquals("8♣", obj.getCard(4, 8));
-        assertEquals("9♣", obj.getCard(4, 9));
-        assertEquals("T♣", obj.getCard(4, 10));
-        assertEquals("J♣", obj.getCard(4, 11));
-        assertEquals("Q♣", obj.getCard(4, 12));
-        assertEquals("K♣", obj.getCard(4, 13));
+        assertEquals("A\u2663", obj.getCard(4, 1));
+        assertEquals("2\u2663", obj.getCard(4, 2));
+        assertEquals("3\u2663", obj.getCard(4, 3));
+        assertEquals("4\u2663", obj.getCard(4, 4));
+        assertEquals("5\u2663", obj.getCard(4, 5));
+        assertEquals("6\u2663", obj.getCard(4, 6));
+        assertEquals("7\u2663", obj.getCard(4, 7));
+        assertEquals("8\u2663", obj.getCard(4, 8));
+        assertEquals("9\u2663", obj.getCard(4, 9));
+        assertEquals("T\u2663", obj.getCard(4, 10));
+        assertEquals("J\u2663", obj.getCard(4, 11));
+        assertEquals("Q\u2663", obj.getCard(4, 12));
+        assertEquals("K\u2663", obj.getCard(4, 13));
+
+        assertEquals("XX", obj.getCard(-1, 4));
+        assertEquals("XX", obj.getCard(5, 4));
+        assertEquals("XX", obj.getCard(4, 0));
+        assertEquals("XX", obj.getCard(4, 14));
     }
 
     @Test
@@ -137,13 +142,16 @@ public class Day1_ConditionalsTest {
     @Test
     public void encryptCharacterTest() {
         assertEquals('F', obj.encryptCharacter('A', 5));
-        assertEquals('B', obj.isDivisibleBy('X', 4));
-        assertEquals('b', obj.isDivisibleBy('x', 4));
-        assertEquals('n', obj.isDivisibleBy('e', 9));
-        assertEquals('A', obj.isDivisibleBy('Z', 1));
+        assertEquals('B', obj.encryptCharacter('X', 4));
+        assertEquals('b', obj.encryptCharacter('x', 4));
+        assertEquals('n', obj.encryptCharacter('e', 9));
+        assertEquals('A', obj.encryptCharacter('Z', 1));
         assertEquals('Y', obj.encryptCharacter('A', 50));
-        assertEquals('T', obj.isDivisibleBy('X', -4));
-        assertEquals('A', obj.isDivisibleBy('Z', -1));
+        assertEquals('T', obj.encryptCharacter('X', -4));
+        assertEquals('Z', obj.encryptCharacter('A', -1));
+        assertEquals('Z', obj.encryptCharacter('A', -27));
+        assertEquals('T', obj.encryptCharacter('X', -30));
+
     }
 
 
@@ -166,7 +174,7 @@ public class Day1_ConditionalsTest {
         assertEquals("BROWN", obj.convertToColor(13));
         assertEquals("BROWN", obj.convertToColor(14));
         assertEquals("WHITE", obj.convertToColor(15));
-        assertEquals("WHITE", obj.convertToColor(50));
+        assertEquals("BROWN", obj.convertToColor(50));
     }
 
     @Test
