@@ -153,6 +153,59 @@ public class Day1_ConditionalsTest {
         assertEquals('Z', obj.encryptCharacter('A', -27));
         assertEquals('T', obj.encryptCharacter('X', -30));
 
+        assertEquals('D', obj.encryptCharacter('A', 3));
+        assertEquals('E', obj.encryptCharacter('B', 3));
+        assertEquals('F', obj.encryptCharacter('C', 3));
+        assertEquals('G', obj.encryptCharacter('D', 3));
+        assertEquals('H', obj.encryptCharacter('E', 3));
+        assertEquals('I', obj.encryptCharacter('F', 3));
+        assertEquals('J', obj.encryptCharacter('G', 3));
+        assertEquals('K', obj.encryptCharacter('H', 3));
+        assertEquals('L', obj.encryptCharacter('I', 3));
+        assertEquals('M', obj.encryptCharacter('J', 3));
+        assertEquals('N', obj.encryptCharacter('K', 3));
+        assertEquals('O', obj.encryptCharacter('L', 3));
+        assertEquals('P', obj.encryptCharacter('M', 3));
+        assertEquals('Q', obj.encryptCharacter('N', 3));
+        assertEquals('R', obj.encryptCharacter('O', 3));
+        assertEquals('S', obj.encryptCharacter('P', 3));
+        assertEquals('T', obj.encryptCharacter('Q', 3));
+        assertEquals('U', obj.encryptCharacter('R', 3));
+        assertEquals('V', obj.encryptCharacter('S', 3));
+        assertEquals('W', obj.encryptCharacter('T', 3));
+        assertEquals('X', obj.encryptCharacter('U', 3));
+        assertEquals('Y', obj.encryptCharacter('V', 3));
+        assertEquals('Z', obj.encryptCharacter('W', 3));
+        assertEquals('A', obj.encryptCharacter('X', 3));
+        assertEquals('B', obj.encryptCharacter('Y', 3));
+        assertEquals('C', obj.encryptCharacter('Z', 3));
+
+        assertEquals('d', obj.encryptCharacter('a', 3));
+        assertEquals('e', obj.encryptCharacter('b', 3));
+        assertEquals('f', obj.encryptCharacter('c', 3));
+        assertEquals('g', obj.encryptCharacter('d', 3));
+        assertEquals('h', obj.encryptCharacter('e', 3));
+        assertEquals('i', obj.encryptCharacter('f', 3));
+        assertEquals('j', obj.encryptCharacter('g', 3));
+        assertEquals('k', obj.encryptCharacter('h', 3));
+        assertEquals('l', obj.encryptCharacter('i', 3));
+        assertEquals('m', obj.encryptCharacter('j', 3));
+        assertEquals('n', obj.encryptCharacter('k', 3));
+        assertEquals('o', obj.encryptCharacter('l', 3));
+        assertEquals('p', obj.encryptCharacter('m', 3));
+        assertEquals('q', obj.encryptCharacter('n', 3));
+        assertEquals('r', obj.encryptCharacter('o', 3));
+        assertEquals('s', obj.encryptCharacter('p', 3));
+        assertEquals('t', obj.encryptCharacter('q', 3));
+        assertEquals('u', obj.encryptCharacter('r', 3));
+        assertEquals('v', obj.encryptCharacter('s', 3));
+        assertEquals('w', obj.encryptCharacter('t', 3));
+        assertEquals('x', obj.encryptCharacter('u', 3));
+        assertEquals('y', obj.encryptCharacter('v', 3));
+        assertEquals('z', obj.encryptCharacter('w', 3));
+        assertEquals('a', obj.encryptCharacter('x', 3));
+        assertEquals('b', obj.encryptCharacter('y', 3));
+        assertEquals('c', obj.encryptCharacter('z', 3));
     }
 
 
