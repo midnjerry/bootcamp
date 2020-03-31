@@ -7,10 +7,9 @@ public class Day1_Conditionals {
     /**
      * You need to check if an object is null before you can use it.
      * You decide to write a method that checks for this.
-     *
+     * <p>
      * Return true if obj is not null.
      * Return false if obj is null.
-     *
      */
     public boolean isNotNull(Object obj) {
         return obj != null;
@@ -20,13 +19,13 @@ public class Day1_Conditionals {
      * You are helping an engineer with a real-time calculator
      * that takes measurements.  The sensors are buggy so sometimes
      * the measurements returned are negative.
-     *
+     * <p>
      * He wants you to find the hypotenuse based on two measurements
      * sideA and sideB given to you.
-     *
+     * <p>
      * The hypotenuse can be found by taking the square root of the
      * following sum: sideA² + sideB²
-     *
+     * <p>
      * If sideA or sideB is negative, you should return 0.
      *
      * @param sideA length of sideA
@@ -45,7 +44,7 @@ public class Day1_Conditionals {
      * Your chemist friend is tired of googling temperature conversions.
      * She wants you to convert Fahrenheit to Celsius using the
      * following formula:
-     *
+     * <p>
      * C = (F - 32) * 5/9
      *
      * @param degreesInFahrenheit degrees in Fahrenheit
@@ -82,10 +81,10 @@ public class Day1_Conditionals {
     /**
      * Your gambling buddy can't get enough of black jack.  He
      * wants you to program that game inside his new IOT toaster.
-     *
+     * <p>
      * Because of display limitations, you can only represent a
      * card with 2 characters.
-     *
+     * <p>
      * Implement a method that returns a 2-character code for
      * the suit number and card number provided.  For example,
      * a 3 of Clubs should look like 3♣;
@@ -148,9 +147,10 @@ public class Day1_Conditionals {
             case 13:
                 cardVal += "K";
                 break;
-            default: return "XX";
+            default:
+                return "XX";
         }
-        switch(suit) {
+        switch (suit) {
             case 1:
                 cardVal += "\u2660";
                 break;
@@ -163,7 +163,8 @@ public class Day1_Conditionals {
             case 4:
                 cardVal += "\u2663";
                 break;
-            default: return "XX";
+            default:
+                return "XX";
         }
         return cardVal;
     }
@@ -171,7 +172,7 @@ public class Day1_Conditionals {
     /**
      * You need to create a TPS report for your boss.  To do this
      * you have to create a CSV file.
-     *
+     * <p>
      * Implement a method that returns a single string with values
      * separated by commas.
      *
@@ -204,11 +205,11 @@ public class Day1_Conditionals {
      * In this cipher, a character is replaced by a letter some
      * fixed number of positions down the alphabet.
      * Letters that go past z roll around and start from a again.
-     *
+     * <p>
      * Example ch = 'A', x = 5 returns 'F'
      * Example ch = 'X', x = 4 returns 'B'
      * Example ch = 'x', x = 4 returns 'b'
-     *
+     * <p>
      * This algorithm should be case-sensitive!
      *
      * @param ch Character to encrypt, it is safe to assume you
@@ -218,38 +219,51 @@ public class Day1_Conditionals {
      * @return encrypted character.
      */
     public char encryptCharacter(char ch, int x) {
-        int minChar = 0, maxChar = 0, calc = 0;
+        boolean isUpper = Character.isUpperCase(ch);
+        char character = isUpper ? Character.toLowerCase(ch) : ch; // 'a', x = 5
+        int max = 'z'; // 122
+        int min = 'a'; // 97
 
-        if ('a' <= ch && ch <= 'z') {
-            minChar = 'a';
-            maxChar = 'z';
-        } else if ('A' <= ch && ch <= 'Z') {
-            minChar = 'A';
-            maxChar = 'Z';
+        if (x < min) {
+            character = (char) ((max % x) + 26);
+        } else if (x > max) {
+            character = (char) ((max % x) - 26);
         }
 
-        int offset = x;
-        if (x > 26) {
-            while (offset > 26) {
-                offset -= 26;
-            }
-            calc = ch + offset;
-        } else if (x < -26) {
-            while (offset < -26) {
-                offset += 26;
-            }
-            calc = ch + offset;
-        } else {
-            calc = ch + x;
-        }
+        return isUpper ? Character.toUpperCase(character) : character;
 
-        if (calc < minChar) {
-            return (char)(calc+26);
-        } else if (calc > maxChar) {
-            return (char)(calc-26);
-        }
+//        int minChar = 0, maxChar = 0, calc = 0;
 
-        return (char)calc;
+//        if ('a' <= ch && ch <= 'z') {
+//            minChar = 'a';
+//            maxChar = 'z';
+//        } else if ('A' <= ch && ch <= 'Z') {
+//            minChar = 'A';
+//            maxChar = 'Z';
+//        }
+//
+//        int offset = x;
+//        if (x > 26) {
+//            while (offset > 26) {
+//                offset -= 26;
+//            }
+//            calc = ch + offset;
+//        } else if (x < -26) {
+//            while (offset < -26) {
+//                offset += 26;
+//            }
+//            calc = ch + offset;
+//        } else {
+//            calc = ch + x;
+//        }
+//
+//        if (calc < minChar) {
+//            return (char)(calc+26);
+//        } else if (calc > maxChar) {
+//            return (char)(calc-26);
+//        }
+//
+//        return (char)calc;
     }
 
     /**
@@ -275,16 +289,25 @@ public class Day1_Conditionals {
         if (num < 0) {
             return "INVALID";
         }
-        switch(num) {
-            case 0: return "BLACK";
-            case 1: return "RED";
-            case 2: return "BLUE";
-            case 3: return "PURPLE";
-            case 4: return "YELLOW";
-            case 5: return "ORANGE";
-            case 6: return "GREEN";
-            case 15: return "WHITE";
-            default: return "BROWN";
+        switch (num) {
+            case 0:
+                return "BLACK";
+            case 1:
+                return "RED";
+            case 2:
+                return "BLUE";
+            case 3:
+                return "PURPLE";
+            case 4:
+                return "YELLOW";
+            case 5:
+                return "ORANGE";
+            case 6:
+                return "GREEN";
+            case 15:
+                return "WHITE";
+            default:
+                return "BROWN";
         }
     }
 
@@ -311,7 +334,7 @@ public class Day1_Conditionals {
      */
     public String horseRace(int a, int b, int c, int d) {
         var horses = Arrays.asList(a, b, c, d);
-        int winningDistance = Collections.max(Arrays.asList(a, b, c, d));
+        int winningDistance = Collections.max(horses);
         int tiesForLead = Collections.frequency(horses, winningDistance);
 
         if (tiesForLead > 1) {
@@ -319,12 +342,17 @@ public class Day1_Conditionals {
         }
 
         var winningHorse = horses.indexOf(winningDistance);
-        switch(winningHorse) {
-            case 0: return "Horse A";
-            case 1: return "Horse B";
-            case 2: return "Horse C";
-            case 3: return "Horse D";
-            default: return "TIE";
+        switch (winningHorse) {
+            case 0:
+                return "Horse A";
+            case 1:
+                return "Horse B";
+            case 2:
+                return "Horse C";
+            case 3:
+                return "Horse D";
+            default:
+                return "TIE";
         }
     }
 }
