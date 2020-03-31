@@ -198,14 +198,14 @@ public class Day1_Conditionals {
      */
     public char encryptCharacter(char ch, int x) {
         char result = Character.toUpperCase(ch);
-        if (x < 0){
+        if (x < 0) {
             int numOfCyclesToMakePositive = -x / 26 + 1;
             x += numOfCyclesToMakePositive * 26;
         }
         int positionsToMove = x % 26;
         int positionsToEnd = 'Z' - result;
 
-        if (positionsToEnd >= positionsToMove){
+        if (positionsToEnd >= positionsToMove) {
             result += positionsToMove;
         } else {
             result = (char) ('A' - 1 + positionsToMove - positionsToEnd);
@@ -220,17 +220,17 @@ public class Day1_Conditionals {
     public char encryptCharacterOriginal(char ch, int x) {
         boolean isLowerCase = Character.isLowerCase(ch);
         char result = Character.toUpperCase(ch);
-        if ( x < 0){
+        if (x < 0) {
             int factor = -x / 26 + 1;
             x += factor * 26;
         }
         int positions = x % 26;
         int lengthToZ = 'Z' - result;
-        if (lengthToZ >= positions){
+        if (lengthToZ >= positions) {
             result += positions;
         } else {
             result = 'A' - 1;
-            result +=  positions - lengthToZ;
+            result += positions - lengthToZ;
         }
 
         if (isLowerCase) {
@@ -240,7 +240,7 @@ public class Day1_Conditionals {
         return result;
     }
 
-    public char encryptCharacterLoop(char ch, int x){
+    public char encryptCharacterLoop(char ch, int x) {
         if (x < 0) {
             int factor = -x / 26 + 1;
             x += factor * 26;
@@ -255,7 +255,7 @@ public class Day1_Conditionals {
                 result++;
             }
         }
-        if (Character.isLowerCase(ch)){
+        if (Character.isLowerCase(ch)) {
             result = Character.toLowerCase(result);
         }
         return result;
@@ -328,26 +328,71 @@ public class Day1_Conditionals {
      * @return winner
      */
     public String horseRace(int a, int b, int c, int d) {
+        int max = Integer.max(Integer.max(a, b), Integer.max(c, d));
+        int numOfMaxHorses = 0;
+        String winner = "";
+
+        if (a == max) {
+            winner = "Horse A";
+            numOfMaxHorses++;
+        }
+        if (b == max) {
+            winner = "Horse B";
+            numOfMaxHorses++;
+        }
+        if (c == max) {
+            winner = "Horse C";
+            numOfMaxHorses++;
+        }
+        if (d == max) {
+            winner = "Horse D";
+            numOfMaxHorses++;
+        }
+        if (numOfMaxHorses > 1) {
+            winner = "TIE";
+        }
+        return winner;
+    }
+
+    public String horseRaceVer3(int a, int b, int c, int d) {
+        int max = Integer.max(Integer.max(a, b), Integer.max(c, d));
+        int numOfMaxHorses = a / max + b / max + c / max + d / max;
+        if (numOfMaxHorses > 1) {
+            return "TIE";
+        }
+
+        if (a == max) {
+            return "Horse A";
+        } else if (b == max) {
+            return "Horse B";
+        } else if (c == max) {
+            return "Horse C";
+        } else {
+            return "Horse D";
+        }
+    }
+
+    public String horseRaceVer2(int a, int b, int c, int d) {
         String winner = "Horse A";
         int max = a;
 
-        if (b > max){
+        if (b > max) {
             winner = "Horse B";
             max = b;
         }
 
-        if (c > max){
+        if (c > max) {
             winner = "Horse C";
             max = c;
         }
 
-        if (d > max){
+        if (d > max) {
             winner = "Horse D";
             max = d;
         }
 
-        int numOfMaxHorses = a/max + b/max + c/max + d/max;
-        if (numOfMaxHorses > 1){
+        int numOfMaxHorses = a / max + b / max + c / max + d / max;
+        if (numOfMaxHorses > 1) {
             return "TIE";
         }
 

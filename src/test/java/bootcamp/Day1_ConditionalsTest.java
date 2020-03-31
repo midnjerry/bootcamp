@@ -247,6 +247,8 @@ public class Day1_ConditionalsTest {
         assertEquals("TIE", obj.horseRace(10, 11, 11, 4));
         assertEquals("TIE", obj.horseRace(10, 11, 6, 11));
         assertEquals("TIE", obj.horseRace(10, 11, 12, 12));
+        assertEquals("TIE", obj.horseRace(0, 0, 0, 0));
+
     }
 
 
