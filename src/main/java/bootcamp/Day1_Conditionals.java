@@ -1,5 +1,8 @@
 package bootcamp;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Day1_Conditionals {
     /**
      * You need to check if an object is null before you can use it.
@@ -10,8 +13,7 @@ public class Day1_Conditionals {
      *
      */
     public boolean isNotNull(Object obj) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        return obj != null;
     }
 
     /**
@@ -32,8 +34,11 @@ public class Day1_Conditionals {
      * @return c  (Use Math.sqrt() to get square root of number)
      */
     public double findHypotenuse(double sideA, double sideB) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if (sideA < 0 || sideB < 0) {
+            return 0;
+        }
+
+        return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
     }
 
     /**
@@ -47,8 +52,7 @@ public class Day1_Conditionals {
      * @return degrees in Celsius
      */
     public double convertToCelsius(double degreesInFahrenheit) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        return (degreesInFahrenheit - 32) * (5.0 / 9.0);
     }
 
     /**
@@ -63,8 +67,16 @@ public class Day1_Conditionals {
      * @return letter grade
      */
     public char returnLetterGrade(double grade) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if (grade >= 90.0) {
+            return 'A';
+        } else if (grade >= 80.0 && grade < 90) {
+            return 'B';
+        } else if (grade >= 70.0 && grade < 80) {
+            return 'C';
+        } else if (grade >= 60.0 && grade < 70) {
+            return 'D';
+        }
+        return 'F';
     }
 
     /**
@@ -95,8 +107,68 @@ public class Day1_Conditionals {
      * suit = 4, card = 10 returns "T♣"
      */
     public String getCard(int suit, int card) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if ((suit < 1 || suit > 4) || (card < 1 || card > 13)) {
+            return "XX";
+        }
+        String cardVal = "";
+        switch (card) {
+            case 1:
+                cardVal += "A";
+                break;
+            case 2:
+                cardVal += "2";
+                break;
+            case 3:
+                cardVal += "3";
+                break;
+            case 4:
+                cardVal += "4";
+                break;
+            case 5:
+                cardVal += "5";
+                break;
+            case 6:
+                cardVal += "6";
+                break;
+            case 7:
+                cardVal += "7";
+                break;
+            case 8:
+                cardVal += "8";
+                break;
+            case 9:
+                cardVal += "9";
+                break;
+            case 10:
+                cardVal += "T";
+                break;
+            case 11:
+                cardVal += "J";
+                break;
+            case 12:
+                cardVal += "Q";
+                break;
+            case 13:
+                cardVal += "K";
+                break;
+            default: cardVal += "X";
+        }
+        switch(suit) {
+            case 1:
+                cardVal += "\u2660";
+                break;
+            case 2:
+                cardVal += "\u2661";
+                break;
+            case 3:
+                cardVal += "\u2662";
+                break;
+            case 4:
+                cardVal += "\u2663";
+                break;
+            default: cardVal += "X";
+        }
+        return cardVal;
     }
 
     /**
@@ -112,8 +184,10 @@ public class Day1_Conditionals {
      * @return single string as a,b,c
      */
     public String csvMe(String a, String b, String c) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if (a == null || b == null || c == null) {
+            return "";
+        }
+        return a + "," + b + "," + c;
     }
 
     /**
@@ -125,8 +199,7 @@ public class Day1_Conditionals {
      * @return true if a / b is evenly divisible, otherwise return false
      */
     public boolean isDivisibleBy(long a, long b) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        return a % b == 0;
     }
 
     /**
@@ -148,8 +221,41 @@ public class Day1_Conditionals {
      * @return encrypted character.
      */
     public char encryptCharacter(char ch, int x) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        int minChar = 0, maxChar = 0, calc = 0;
+
+        if ('a' <= ch && ch <= 'z') {
+            minChar = 'a';
+            maxChar = 'z';
+        } else if ('A' <= ch && ch <= 'Z') {
+            minChar = 'A';
+            maxChar = 'Z';
+        }
+
+        int offset = x;
+        if (x > 26) {
+            while (offset > 26) {
+                offset -= 26;
+            }
+            calc = ch + offset;
+        }
+        if (x < -26) {
+            while (offset < -26) {
+                offset += 26;
+            }
+            calc = ch + offset;
+        } else {
+            calc = ch + x;
+        }
+
+        if (calc < minChar) {
+            System.out.println("calc is less " + offset);
+            return (char)(calc+26);
+        } else if (calc > maxChar) {
+            System.out.println("calc is greater" + offset);
+            return (char)(calc-26);
+        }
+
+        return (char)calc;
     }
 
     /**
@@ -172,8 +278,20 @@ public class Day1_Conditionals {
      * @return color
      */
     public String convertToColor(int num) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if (num < 0) {
+            return "INVALID";
+        }
+        switch(num) {
+            case 0: return "BLACK";
+            case 1: return "RED";
+            case 2: return "BLUE";
+            case 3: return "PURPLE";
+            case 4: return "YELLOW";
+            case 5: return "ORANGE";
+            case 6: return "GREEN";
+            case 15: return "WHITE";
+            default: return "BROWN";
+        }
     }
 
     /**
@@ -198,7 +316,21 @@ public class Day1_Conditionals {
      * @return winner
      */
     public String horseRace(int a, int b, int c, int d) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        var horses = Arrays.asList(a, b, c, d);
+        int winningDistance = Collections.max(Arrays.asList(a, b, c, d));
+        int tiesForLead = Collections.frequency(horses, winningDistance);
+
+        if (tiesForLead > 1) {
+            return "TIE";
+        }
+
+        var winningHorse = horses.indexOf(winningDistance);
+        switch(winningHorse) {
+            case 0: return "Horse A";
+            case 1: return "Horse B";
+            case 2: return "Horse C";
+            case 3: return "Horse D";
+            default: return "TIE";
+        }
     }
 }
