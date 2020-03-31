@@ -302,11 +302,41 @@ public class Day1_Conditionals {
             max = d;
         }
 
-        int frequency = a/max + b/max + c/max + d/max;
-        if (frequency > 1){
+        int numOfMaxHorses = a/max + b/max + c/max + d/max;
+        if (numOfMaxHorses > 1){
             return "TIE";
         }
 
+        return winner;
+    }
+
+    public String horseRaceOriginal(int a, int b, int c, int d) {
+        String winner = "";
+        int max = Math.max(Math.max(a, b), Math.max(c, d));
+        if (a == max) {
+            winner = "Horse A";
+        }
+        if (b == max) {
+            if (winner.isEmpty()) {
+                winner = "Horse B";
+            } else {
+                return "TIE";
+            }
+        }
+        if (c == max) {
+            if (winner.isEmpty()) {
+                winner = "Horse C";
+            } else {
+                return "TIE";
+            }
+        }
+        if (d == max) {
+            if (winner.isEmpty()) {
+                winner = "Horse D";
+            } else {
+                return "TIE";
+            }
+        }
         return winner;
     }
 }
