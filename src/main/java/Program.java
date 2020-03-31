@@ -51,5 +51,28 @@ public class Program {
         System.out.println(max);
         System.out.println(stringValue + 50);
         System.out.println("Hello World");  // You can even put comments after a command.
+
+        usingCharacter();
+    }
+
+    public static void usingCharacter(){
+        Character ch = 'A';
+        //This displays 'a'
+        System.out.println(Character.toLowerCase(ch));
+
+        //This displays 'A'
+        System.out.println(ch);
+
+        //Returns the int value that the specified character represents.
+        int code = ch;
+
+        //This displays A = 65
+        System.out.println(ch + " = " + code);
+
+        //Add 5 to code and convert it to char
+        ch = (char) (code + 5);
+
+        //This displays F
+        System.out.println(ch);
     }
 }
