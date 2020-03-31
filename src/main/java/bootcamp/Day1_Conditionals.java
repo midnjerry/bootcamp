@@ -107,9 +107,6 @@ public class Day1_Conditionals {
      * suit = 4, card = 10 returns "T♣"
      */
     public String getCard(int suit, int card) {
-        if ((suit < 1 || suit > 4) || (card < 1 || card > 13)) {
-            return "XX";
-        }
         String cardVal = "";
         switch (card) {
             case 1:
@@ -151,7 +148,7 @@ public class Day1_Conditionals {
             case 13:
                 cardVal += "K";
                 break;
-            default: cardVal += "X";
+            default: return "XX";
         }
         switch(suit) {
             case 1:
@@ -166,7 +163,7 @@ public class Day1_Conditionals {
             case 4:
                 cardVal += "\u2663";
                 break;
-            default: cardVal += "X";
+            default: return "XX";
         }
         return cardVal;
     }
