@@ -219,51 +219,38 @@ public class Day1_Conditionals {
      * @return encrypted character.
      */
     public char encryptCharacter(char ch, int x) {
-        boolean isUpper = Character.isUpperCase(ch);
-        char character = isUpper ? Character.toLowerCase(ch) : ch; // 'a', x = 5
-        int max = 'z'; // 122
-        int min = 'a'; // 97
+        int minChar = 0, maxChar = 0, calc = 0;
 
-        if (x < min) {
-            character = (char) ((max % x) + 26);
-        } else if (x > max) {
-            character = (char) ((max % x) - 26);
+        if ('a' <= ch && ch <= 'z') {
+            minChar = 'a';
+            maxChar = 'z';
+        } else if ('A' <= ch && ch <= 'Z') {
+            minChar = 'A';
+            maxChar = 'Z';
         }
 
-        return isUpper ? Character.toUpperCase(character) : character;
+        int offset = x;
+        if (x > 26) {
+            while (offset > 26) {
+                offset -= 26;
+            }
+            calc = ch + offset;
+        } else if (x < -26) {
+            while (offset < -26) {
+                offset += 26;
+            }
+            calc = ch + offset;
+        } else {
+            calc = ch + x;
+        }
 
-//        int minChar = 0, maxChar = 0, calc = 0;
+        if (calc < minChar) {
+            return (char)(calc+26);
+        } else if (calc > maxChar) {
+            return (char)(calc-26);
+        }
 
-//        if ('a' <= ch && ch <= 'z') {
-//            minChar = 'a';
-//            maxChar = 'z';
-//        } else if ('A' <= ch && ch <= 'Z') {
-//            minChar = 'A';
-//            maxChar = 'Z';
-//        }
-//
-//        int offset = x;
-//        if (x > 26) {
-//            while (offset > 26) {
-//                offset -= 26;
-//            }
-//            calc = ch + offset;
-//        } else if (x < -26) {
-//            while (offset < -26) {
-//                offset += 26;
-//            }
-//            calc = ch + offset;
-//        } else {
-//            calc = ch + x;
-//        }
-//
-//        if (calc < minChar) {
-//            return (char)(calc+26);
-//        } else if (calc > maxChar) {
-//            return (char)(calc-26);
-//        }
-//
-//        return (char)calc;
+        return (char)calc;
     }
 
     /**
