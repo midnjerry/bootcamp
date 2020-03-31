@@ -197,42 +197,23 @@ public class Day1_Conditionals {
      * @return encrypted character.
      */
     public char encryptCharacter(char ch, int x) {
-        boolean isLowerCase = Character.isLowerCase(ch);
         char result = Character.toUpperCase(ch);
-        if ( x < 0){
-            int factor = -x / 26 + 1;
-            x += factor * 26;
+        if (x < 0){
+            int numOfCyclesToMakePositive = -x / 26 + 1;
+            x += numOfCyclesToMakePositive * 26;
         }
-        int positions = x % 26;
-        int lengthToZ = 'Z' - result;
-        if (lengthToZ >= positions){
-            result += positions;
+        int positionsToMove = x % 26;
+        int positionsToEnd = 'Z' - result;
+
+        if (positionsToEnd >= positionsToMove){
+            result += positionsToMove;
         } else {
-            result = 'A' - 1;
-            result +=  positions - lengthToZ;
+            result = (char) ('A' - 1 + positionsToMove - positionsToEnd);
         }
 
-
-//        if (x < 0) {
-//            int factor = -x / 26 + 1;
-//            x += factor * 26;
-//        }
-//        int positions = x % 26;
-//
-//        boolean isLowerCase = Character.isLowerCase(ch);
-//        char result = Character.toUpperCase(ch);
-//        for (int i = 0; i < positions; i++) {
-//            if (result == 'Z') {
-//                result = 'A';
-//            } else {
-//                result++;
-//            }
-//        }
-//
-        if (isLowerCase) {
+        if (Character.isLowerCase(ch)) {
             result = Character.toLowerCase(result);
         }
-
         return result;
     }
 
@@ -303,32 +284,29 @@ public class Day1_Conditionals {
      * @return winner
      */
     public String horseRace(int a, int b, int c, int d) {
-        String winner = "";
-        int max = Math.max(Math.max(a, b), Math.max(c, d));
-        if (a == max) {
-            winner = "Horse A";
+        String winner = "Horse A";
+        int max = a;
+
+        if (b > max){
+            winner = "Horse B";
+            max = b;
         }
-        if (b == max) {
-            if (winner.isEmpty()) {
-                winner = "Horse B";
-            } else {
-                return "TIE";
-            }
+
+        if (c > max){
+            winner = "Horse C";
+            max = c;
         }
-        if (c == max) {
-            if (winner.isEmpty()) {
-                winner = "Horse C";
-            } else {
-                return "TIE";
-            }
+
+        if (d > max){
+            winner = "Horse D";
+            max = d;
         }
-        if (d == max) {
-            if (winner.isEmpty()) {
-                winner = "Horse D";
-            } else {
-                return "TIE";
-            }
+
+        int frequency = a/max + b/max + c/max + d/max;
+        if (frequency > 1){
+            return "TIE";
         }
+
         return winner;
     }
 }
