@@ -112,28 +112,14 @@ public class Day1_Conditionals {
                 cardVal += "A";
                 break;
             case 2:
-                cardVal += "2";
-                break;
             case 3:
-                cardVal += "3";
-                break;
             case 4:
-                cardVal += "4";
-                break;
             case 5:
-                cardVal += "5";
-                break;
             case 6:
-                cardVal += "6";
-                break;
             case 7:
-                cardVal += "7";
-                break;
             case 8:
-                cardVal += "8";
-                break;
             case 9:
-                cardVal += "9";
+                cardVal += "" + card;
                 break;
             case 10:
                 cardVal += "T";
