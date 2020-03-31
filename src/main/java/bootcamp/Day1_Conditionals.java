@@ -4,27 +4,25 @@ public class Day1_Conditionals {
     /**
      * You need to check if an object is null before you can use it.
      * You decide to write a method that checks for this.
-     *
+     * <p>
      * Return true if obj is not null.
      * Return false if obj is null.
-     *
      */
     public boolean isNotNull(Object obj) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        return obj != null;
     }
 
     /**
      * You are helping an engineer with a real-time calculator
      * that takes measurements.  The sensors are buggy so sometimes
      * the measurements returned are negative.
-     *
+     * <p>
      * He wants you to find the hypotenuse based on two measurements
      * sideA and sideB given to you.
-     *
+     * <p>
      * The hypotenuse can be found by taking the square root of the
      * following sum: sideA² + sideB²
-     *
+     * <p>
      * If sideA or sideB is negative, you should return 0.
      *
      * @param sideA length of sideA
@@ -32,23 +30,24 @@ public class Day1_Conditionals {
      * @return c  (Use Math.sqrt() to get square root of number)
      */
     public double findHypotenuse(double sideA, double sideB) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if (sideA < 0 || sideB < 0) {
+            return 0;
+        }
+        return Math.sqrt(sideA * sideA + sideB * sideB);
     }
 
     /**
      * Your chemist friend is tired of googling temperature conversions.
      * She wants you to convert Fahrenheit to Celsius using the
      * following formula:
-     *
+     * <p>
      * C = (F - 32) * 5/9
      *
      * @param degreesInFahrenheit degrees in Fahrenheit
      * @return degrees in Celsius
      */
     public double convertToCelsius(double degreesInFahrenheit) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        return (degreesInFahrenheit - 32) * 5 / 9;
     }
 
     /**
@@ -63,17 +62,24 @@ public class Day1_Conditionals {
      * @return letter grade
      */
     public char returnLetterGrade(double grade) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if (grade >= 90) {
+            return 'A';
+        } else if (grade >= 80) {
+            return 'B';
+        } else if (grade >= 70) {
+            return 'C';
+        } else if (grade >= 60) {
+            return 'D';
+        } else return 'F';
     }
 
     /**
      * Your gambling buddy can't get enough of black jack.  He
      * wants you to program that game inside his new IOT toaster.
-     *
+     * <p>
      * Because of display limitations, you can only represent a
      * card with 2 characters.
-     *
+     * <p>
      * Implement a method that returns a 2-character code for
      * the suit number and card number provided.  For example,
      * a 3 of Clubs should look like 3♣;
@@ -95,14 +101,59 @@ public class Day1_Conditionals {
      * suit = 4, card = 10 returns "T♣"
      */
     public String getCard(int suit, int card) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        String result = "";
+        switch (card) {
+            case (1):
+                result += 'A';
+                break;
+            case (2):
+            case (3):
+            case (4):
+            case (5):
+            case (6):
+            case (7):
+            case (8):
+            case (9):
+                result += card;
+                break;
+            case (10):
+                result += 'T';
+                break;
+            case (11):
+                result += 'J';
+                break;
+            case (12):
+                result += 'Q';
+                break;
+            case (13):
+                result += 'K';
+                break;
+            default:
+                return "XX";
+        }
+        switch (suit) {
+            case (1):
+                result += '\u2660';
+                break;
+            case (2):
+                result += '\u2661';
+                break;
+            case (3):
+                result += '\u2662';
+                break;
+            case (4):
+                result += '\u2663';
+                break;
+            default:
+                return "XX";
+        }
+        return result;
     }
 
     /**
      * You need to create a TPS report for your boss.  To do this
      * you have to create a CSV file.
-     *
+     * <p>
      * Implement a method that returns a single string with values
      * separated by commas.
      *
@@ -112,8 +163,7 @@ public class Day1_Conditionals {
      * @return single string as a,b,c
      */
     public String csvMe(String a, String b, String c) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        return a + "," + b + "," + c;
     }
 
     /**
@@ -125,8 +175,7 @@ public class Day1_Conditionals {
      * @return true if a / b is evenly divisible, otherwise return false
      */
     public boolean isDivisibleBy(long a, long b) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        return a % b == 0;
     }
 
     /**
@@ -134,11 +183,11 @@ public class Day1_Conditionals {
      * In this cipher, a character is replaced by a letter some
      * fixed number of positions down the alphabet.
      * Letters that go past z roll around and start from a again.
-     *
+     * <p>
      * Example ch = 'A', x = 5 returns 'F'
      * Example ch = 'X', x = 4 returns 'B'
      * Example ch = 'x', x = 4 returns 'b'
-     *
+     * <p>
      * This algorithm should be case-sensitive!
      *
      * @param ch Character to encrypt, it is safe to assume you
@@ -148,8 +197,43 @@ public class Day1_Conditionals {
      * @return encrypted character.
      */
     public char encryptCharacter(char ch, int x) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        boolean isLowerCase = Character.isLowerCase(ch);
+        char result = Character.toUpperCase(ch);
+        if ( x < 0){
+            int factor = -x / 26 + 1;
+            x += factor * 26;
+        }
+        int positions = x % 26;
+        int lengthToZ = 'Z' - result;
+        if (lengthToZ >= positions){
+            result += positions;
+        } else {
+            result = 'A' - 1;
+            result +=  positions - lengthToZ;
+        }
+
+
+//        if (x < 0) {
+//            int factor = -x / 26 + 1;
+//            x += factor * 26;
+//        }
+//        int positions = x % 26;
+//
+//        boolean isLowerCase = Character.isLowerCase(ch);
+//        char result = Character.toUpperCase(ch);
+//        for (int i = 0; i < positions; i++) {
+//            if (result == 'Z') {
+//                result = 'A';
+//            } else {
+//                result++;
+//            }
+//        }
+//
+        if (isLowerCase) {
+            result = Character.toLowerCase(result);
+        }
+
+        return result;
     }
 
     /**
@@ -172,8 +256,29 @@ public class Day1_Conditionals {
      * @return color
      */
     public String convertToColor(int num) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        if (num < 0) {
+            return "INVALID";
+        }
+        switch (num) {
+            case (0):
+                return "BLACK";
+            case (1):
+                return "RED";
+            case (2):
+                return "BLUE";
+            case (3):
+                return "PURPLE";
+            case (4):
+                return "YELLOW";
+            case (5):
+                return "ORANGE";
+            case (6):
+                return "GREEN";
+            case (15):
+                return "WHITE";
+            default:
+                return "BROWN";
+        }
     }
 
     /**
@@ -198,7 +303,32 @@ public class Day1_Conditionals {
      * @return winner
      */
     public String horseRace(int a, int b, int c, int d) {
-        // Erase this line and write code here.
-        throw new RuntimeException("Method Not Implemented");
+        String winner = "";
+        int max = Math.max(Math.max(a, b), Math.max(c, d));
+        if (a == max) {
+            winner = "Horse A";
+        }
+        if (b == max) {
+            if (winner.isEmpty()) {
+                winner = "Horse B";
+            } else {
+                return "TIE";
+            }
+        }
+        if (c == max) {
+            if (winner.isEmpty()) {
+                winner = "Horse C";
+            } else {
+                return "TIE";
+            }
+        }
+        if (d == max) {
+            if (winner.isEmpty()) {
+                winner = "Horse D";
+            } else {
+                return "TIE";
+            }
+        }
+        return winner;
     }
 }
