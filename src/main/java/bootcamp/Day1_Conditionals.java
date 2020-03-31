@@ -237,8 +237,7 @@ public class Day1_Conditionals {
                 offset -= 26;
             }
             calc = ch + offset;
-        }
-        if (x < -26) {
+        } else if (x < -26) {
             while (offset < -26) {
                 offset += 26;
             }
@@ -248,10 +247,8 @@ public class Day1_Conditionals {
         }
 
         if (calc < minChar) {
-            System.out.println("calc is less " + offset);
             return (char)(calc+26);
         } else if (calc > maxChar) {
-            System.out.println("calc is greater" + offset);
             return (char)(calc-26);
         }
 
