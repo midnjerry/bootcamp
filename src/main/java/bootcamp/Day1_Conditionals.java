@@ -217,6 +217,50 @@ public class Day1_Conditionals {
         return result;
     }
 
+    public char encryptCharacterOriginal(char ch, int x) {
+        boolean isLowerCase = Character.isLowerCase(ch);
+        char result = Character.toUpperCase(ch);
+        if ( x < 0){
+            int factor = -x / 26 + 1;
+            x += factor * 26;
+        }
+        int positions = x % 26;
+        int lengthToZ = 'Z' - result;
+        if (lengthToZ >= positions){
+            result += positions;
+        } else {
+            result = 'A' - 1;
+            result +=  positions - lengthToZ;
+        }
+
+        if (isLowerCase) {
+            result = Character.toLowerCase(result);
+        }
+
+        return result;
+    }
+
+    public char encryptCharacterLoop(char ch, int x){
+        if (x < 0) {
+            int factor = -x / 26 + 1;
+            x += factor * 26;
+        }
+        int positionsToMove = x % 26;
+
+        char result = Character.toUpperCase(ch);
+        for (int i = 0; i < positionsToMove; i++) {
+            if (result == 'Z') {
+                result = 'A';
+            } else {
+                result++;
+            }
+        }
+        if (Character.isLowerCase(ch)){
+            result = Character.toLowerCase(result);
+        }
+        return result;
+    }
+
     /**
      * Convert the integer 'num' to a color based on the follow chart:
      * x     |  color
