@@ -30,6 +30,8 @@ public class Day1B_Variables {
      * 'L' or 'l': return "You turn left."
      *
      * @param choice Key pressed by user - returned as char.
+     * @return String as specified above, or "" if char not found.
+     *
      */
     public String selectOption(char choice) {
         // Erase this line and write code here.
