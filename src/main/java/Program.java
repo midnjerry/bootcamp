@@ -15,7 +15,7 @@ public class Program {
      * @param args
      */
     public static void main(String[] args) {
-        // Day 2 Material
+        // Day 1 and Day 2 Code
         // abc
         // cdf
         //Primitive variables
