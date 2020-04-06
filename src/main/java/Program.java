@@ -15,9 +15,9 @@ public class Program {
      * @param args
      */
     public static void main(String[] args) {
-        // Day 1 Code
-        
-
+        // Day 1 and Day 2 Code
+        // abc
+        // cdf
         //Primitive variables
         boolean isFull = false;
         byte number = (byte) 257; // [0 - 255]  256 = 1 0000 0001b
