@@ -15,6 +15,9 @@ public class Program {
      * @param args
      */
     public static void main(String[] args) {
+        // Day 2 Material
+        // abc
+        // cdf
         //Primitive variables
         boolean isFull = false;
         byte number = (byte) 257; // [0 - 255]  256 = 1 0000 0001b
